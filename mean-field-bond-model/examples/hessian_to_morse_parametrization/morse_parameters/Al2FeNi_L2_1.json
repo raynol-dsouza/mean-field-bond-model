@@ -1,0 +1,81 @@
+{
+  "0": {
+    "species": "Al",
+    "basis_sites": [
+      0,
+      1
+    ],
+    "shells": {
+      "1": {
+        "D_e": 0.7368,
+        "a": 1.419,
+        "r_e": 2.5423,
+        "target_species": "Ni"
+      },
+      "2": {
+        "D_e": 5.2461,
+        "a": 0.589,
+        "r_e": 2.5423,
+        "target_species": "Fe"
+      },
+      "3": {
+        "D_e": 0.5117,
+        "a": 1.0056,
+        "r_e": 2.9356,
+        "target_species": "Al"
+      }
+    }
+  },
+  "1": {
+    "species": "Ni",
+    "basis_sites": [
+      2
+    ],
+    "shells": {
+      "1": {
+        "D_e": 0.7368,
+        "a": 1.419,
+        "r_e": 2.5423,
+        "target_species": "Al"
+      },
+      "2": {
+        "D_e": 0.7368,
+        "a": 1.419,
+        "r_e": 2.5423,
+        "target_species": "Al"
+      },
+      "3": {
+        "D_e": 0.07,
+        "a": 1.5348,
+        "r_e": 2.9356,
+        "target_species": "Fe"
+      }
+    }
+  },
+  "2": {
+    "species": "Fe",
+    "basis_sites": [
+      3
+    ],
+    "shells": {
+      "1": {
+        "D_e": 5.2461,
+        "a": 0.589,
+        "r_e": 2.5423,
+        "target_species": "Al"
+      },
+      "2": {
+        "D_e": 5.2461,
+        "a": 0.589,
+        "r_e": 2.5423,
+        "target_species": "Al"
+      },
+      "3": {
+        "D_e": 0.07,
+        "a": 1.5348,
+        "r_e": 2.9356,
+        "target_species": "Ni"
+      }
+    }
+  }
+}
