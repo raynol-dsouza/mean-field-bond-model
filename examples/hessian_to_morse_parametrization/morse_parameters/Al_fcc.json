@@ -1,0 +1,28 @@
+{
+  "0": {
+    "species": "Al",
+    "basis_sites": [
+      0
+    ],
+    "shells": {
+      "1": {
+        "D_e": 0.4072,
+        "a": 1.1766,
+        "r_e": 2.8604,
+        "target_species": "Al"
+      },
+      "2": {
+        "D_e": 0.0,
+        "a": 0.0,
+        "r_e": 4.0453,
+        "target_species": "Al"
+      },
+      "3": {
+        "D_e": 0.0,
+        "a": 0.0,
+        "r_e": 4.9544,
+        "target_species": "Al"
+      }
+    }
+  }
+}

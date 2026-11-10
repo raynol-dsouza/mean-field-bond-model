@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mean-field-bond-model"
+version = "0.1.0"
+description = "Site-symmetry-aware nearest-neighbor bond shell analysis and the mean-field bond model for atomic crystals."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Raynol Dsouza", email = "raynol.dsouza@asnr.fr" },
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "ase",
+    "matscipy",
+    "numpy",
+    "phonopy",
+    "scipy",
+    "spglib",
+]
+
+[project.optional-dependencies]
+viz = ["matplotlib"]
+examples = ["matplotlib", "pandas", "jupyter"]
+dev = ["pytest", "pytest-cov", "black", "isort", "flake8", "nbqa"]
+
+[project.urls]
+Repository = "https://github.com/raynol-dsouza/mean-field-bond-model"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.black]
+line-length = 79
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 79
