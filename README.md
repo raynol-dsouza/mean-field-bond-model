@@ -1,7 +1,7 @@
-# mean-field-bond-model
+# Code and examples pertaining to the mean-field bond model 
 
 Site-symmetry-aware nearest-neighbor bond shell analysis and the mean-field
-bond model for atomic crystals.
+bond model for complex atomic crystals.
 
 The package takes a relaxed crystal structure and:
 
@@ -19,7 +19,7 @@ The package takes a relaxed crystal structure and:
 5. builds the matching bond densities from MD trajectories for comparison
    (`md`), and plots both (`plot`, `plot_data`).
 
-It works for crystals with any number of Wyckoff sites and species.
+The model works for crystals with any number of Wyckoff sites and species.
 
 ## Installation
 
@@ -99,18 +99,6 @@ model = MeanFieldBondModel(
 )
 result = model.run_npt([300.0, 600.0, 900.0], pressure=0.0)
 print([r["eps"] for r in result])
-```
-
-## Code style
-
-The code follows PEP 8: 79-character lines, one statement and one assignment
-per line, formatted with `black` and `isort` and checked with `flake8`
-(settings in `pyproject.toml` and `.flake8`). To check:
-
-```bash
-pip install -e ".[dev]"
-flake8 src
-nbqa flake8 examples
 ```
 
 ## License
