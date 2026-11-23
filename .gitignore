@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+# Example data, archived on Zenodo (see README) and fetched on demand
+examples/structures/
+examples/potentials/
+examples/morse_parameters/
+examples/morse_hessians/
+examples/md_data/
+examples/results/
+examples/plots/

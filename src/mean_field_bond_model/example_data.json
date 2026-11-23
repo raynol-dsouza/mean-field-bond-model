@@ -1,0 +1,37 @@
+{
+  "inputs": {
+    "file": "inputs.zip",
+    "sha256": "3119875374fa2c0f9b9a9431468cf901c01e6be22f82fffa7c93d5005722924e",
+    "size": 6922013,
+    "folders": [
+      "structures",
+      "potentials",
+      "morse_parameters"
+    ]
+  },
+  "morse_hessians": {
+    "file": "morse_hessians.zip",
+    "sha256": "32f1ddf3f29f86dc0fb3a8f0098ad5f4343e670dc52dddaed957011ccc3e3161",
+    "size": 2571956,
+    "folders": [
+      "morse_hessians"
+    ]
+  },
+  "md_data": {
+    "file": "md_data.zip",
+    "sha256": "1c997a49f48ed787f7a8937c80227b8ecb9c4f67b1766c55f69e661f68508ac4",
+    "size": 22741530,
+    "folders": [
+      "md_data"
+    ]
+  },
+  "mean_field_bond_model_results": {
+    "file": "mean_field_bond_model_results.zip",
+    "sha256": "4506958c61bc46da72e28eff51f9db3f71594f7a8b9f7ef62dc05503cf14a39b",
+    "size": 49371686,
+    "folders": [
+      "results",
+      "plots"
+    ]
+  }
+}
