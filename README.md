@@ -86,7 +86,13 @@ import numpy as np
 
 from ase.io import read
 
+# Example data: download the inputs (structures, potentials, Morse
+# parameters) and the pre-computed Hessians from Zenodo into examples/.
+# Skipped if they are already there.
 mfbm.example_data.fetch_example_data(["inputs", "morse_hessians"], "examples")
+
+# Structure: read relaxed fcc Al and build the 5x5x5 supercell (500 atoms)
+# that the Hessian below was computed on.
 structure = read(
     "examples/structures/Al_fcc/Al_fcc.data", format="lammps-data"
 )
@@ -95,17 +101,29 @@ _, displacement_dict = mfbm.hessian.generate_supercells_with_displacements(
 )
 supercell = displacement_dict["supercell_structure"]
 
+# Bonding potentials and force constants: the Morse parameters fitted per
+# Wyckoff site and shell, and the Hessian of the supercell computed with them.
 morse_params = mfbm.load_morse_params("examples/morse_parameters/Al_fcc.json")
 hessian = np.load("examples/morse_hessians/Al_fcc/Al_fcc.npz")["hessian"]
+
+# Symmetry analysis: the neighbor shells of each Wyckoff site (3 here, as in
+# the Morse fit) and the site-symmetry operations that map their bonds onto
+# one reference bond per shell.
 analysis = mfbm.NeighborBondSymmetryAnalysis(supercell, n_shells=3).analyze()
+
+# Bond-bond covariances: how every bond moves with the reference bond of a
+# shell, from the Hessian.
 alphas = mfbm.BondPairCovarianceCalculator(
     supercell, analysis, hessian
 ).compute_alphas()
 
+# Mean-field bond model: one bonding potential per (Wyckoff site, shell).
 model = mfbm.MeanFieldBondModel(
     supercell, mfbm.build_bonding_potentials(morse_params), analysis, alphas
 )
 
+# NPT at zero pressure: solve the model at each temperature (K) and print
+# the lattice scaling 1 + eps of the self-consistent volume.
 result = model.run_npt([300.0, 600.0, 900.0], pressure=0.0)
 print([r["eps"] for r in result])
 ```
